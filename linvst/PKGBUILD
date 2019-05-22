@@ -1,0 +1,27 @@
+pkgname=linvst
+pkgver=2.5.r27.4856b28
+pkgrel=1
+pkgdesc="enables Windows vst's to be used as Linux vst's in Linux vst capable DAW's"
+arch=('x86_64')
+url="https://github.com/osxmidi/LinVst"
+depends=('wine')
+makedepends=('git')
+source=('git+https://github.com/osxmidi/LinVst.git' 'w2lvst')
+sha256sums=('SKIP'
+			'SKIP')
+
+pkgver() {
+    cd "LinVst"
+    printf "%s" "$(git describe --tags | sed 's/\([^-]*-\)g/r\1/;s/-/./g')"
+}
+
+build() {
+    cd "${srcdir}/LinVst"
+    make -f Makefile-embed-6432 DESTDIR="${pkgdir}" all
+}
+
+package() {
+    cd "${srcdir}/LinVst"
+    make -f Makefile-embed-6432 DESTDIR="${pkgdir}" VST_DIR="${pkgdir}/usr/bin/" install
+    install -Dm755 $srcdir/w2lvst $pkgdir/usr/bin/w2lvst
+}
