@@ -1,2 +1,2 @@
 # ArchBuilds
-PKGBUILDS For Archlinux
+PKGBUILDS For Archlinux (Local Builds)
