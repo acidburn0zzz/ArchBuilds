@@ -1,5 +1,5 @@
 pkgname=linvst
-pkgver=2.5.r27.4856b28
+pkgver=2.5.r31.f62b460
 pkgrel=1
 pkgdesc="enables Windows vst's to be used as Linux vst's in Linux vst capable DAW's"
 arch=('x86_64')
