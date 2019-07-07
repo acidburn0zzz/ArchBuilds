@@ -10,12 +10,12 @@ pkgbase = wineasio
 	makedepends = ed
 	makedepends = steinberg-asio
 	depends = wine
-	depends = jack
+	depends = jack2
 	source = http://downloads.sourceforge.net/wineasio/wineasio-0.9.2.tar.gz
 	source = unicode.h
 	sha256sums = 9fbc2d10a4cec307dc0558bed82b887c864424d16da40a80f1d80f907d92af0b
 	sha256sums = SKIP
-	depends_x86_64 = lib32-jack
+	depends_x86_64 = lib32-jack2
 	makedepends_x86_64 = gcc-multilib
 
 pkgname = wineasio
