@@ -6,7 +6,7 @@ arch=('x86_64')
 url="https://github.com/osxmidi/LinVst"
 depends=('wine')
 makedepends=('git')
-source=("https://github.com/osxmidi/LinVst/releases/download/$pkgver/LinVst-${pkgver}1-Debian-Stretch.zip" 'w2lvst')
+source=("https://github.com/osxmidi/LinVst/releases/download/$pkgver/LinVst-${pkgver}2-Debian-Stretch.zip" 'w2lvst')
 sha256sums=('SKIP'
             'SKIP')
 
