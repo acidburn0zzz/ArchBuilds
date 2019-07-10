@@ -11,7 +11,7 @@ sha256sums=('SKIP'
             'SKIP')
 
 package() {
-    cd "${srcdir}/LinVst-${pkgver}1-Debian-Stretch/embedded-version/"
+    cd "${srcdir}/LinVst-${pkgver}2-Debian-Stretch/embedded-version/"
     for file in *; do
         install -Dm755 $file $pkgdir/usr/bin/$file
     done
