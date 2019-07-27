@@ -1,19 +1,22 @@
 pkgname=linvst
-pkgver=2.5
+pkgver=2.55
 pkgrel=1
 pkgdesc="enables Windows vst's to be used as Linux vst's in Linux vst capable DAW's"
 arch=('x86_64')
 url="https://github.com/osxmidi/LinVst"
 depends=('wine')
 makedepends=('git')
-source=("https://github.com/osxmidi/LinVst/releases/download/$pkgver/LinVst-${pkgver}2-Debian-Stretch.zip" 'w2lvst')
+source=("https://github.com/osxmidi/LinVst/releases/download/$pkgver/LinVst-${pkgver}-Debian-Stretch.zip" 'w2lvst')
 sha256sums=('SKIP'
             'SKIP')
 
 package() {
-    cd "${srcdir}/LinVst-${pkgver}2-Debian-Stretch/embedded-version/"
-    for file in *; do
-        install -Dm755 $file $pkgdir/usr/bin/$file
-    done
-    install -Dm755 $srcdir/w2lvst $pkgdir/usr/bin/w2lvst
+	cd "${srcdir}/LinVst-${pkgver}-Debian-Stretch/embedded/"
+	for file in *.so; do
+                install -Dm755 $file $pkgdir/usr/bin/$file
+        done
+        for file in *.exe; do
+                install -Dm755 $file $pkgdir/usr/bin/$file
+        done
+	install -Dm755 $srcdir/w2lvst $pkgdir/usr/bin/w2lvst
 }
