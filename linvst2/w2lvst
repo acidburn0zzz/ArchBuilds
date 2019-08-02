@@ -10,7 +10,7 @@ import time  # sleep/wake command support
 import sys  # import sytem functions
 
 # Golbal Variables
-linvstfileso="/usr/bin/linvst.so"  # the linvst.so bridge file for the linvst bridge
+linvstfileso="/usr/share/LinVst/64bit-32bit/linvst.so"  # the linvst.so bridge file for the linvst bridge
 homedir=os.path.expanduser("~")  # expand the current users home directory /home/<user>
 vstdir=(homedir + "/" + ".vst" + "/")  # DAW scanned VST directory
 currentdir=os.getcwd() + "/"  # get the current work directory
